@@ -4,9 +4,16 @@ var scores = [78,90,100,69,97,89,45,56];
 
 //총점 저장 변수
 var total = 0;
- 
+
+/*
 for( var i = 0; i < scores.length; i++) {
      total += scores[i];
+}
+*/
+
+for ( var score of scores){
+     //console.log(`수학점수: ${score}점`);
+     total += score;
 }
 
 //평균 저장 변수
