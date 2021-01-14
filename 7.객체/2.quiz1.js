@@ -16,7 +16,7 @@ var salaries = {
     kim : 1000000,
     park : 1600000,
     lee : 1300000
-}
+};
 var total = 0;
 for (var salary in salaries){
     total += salaries[salary];

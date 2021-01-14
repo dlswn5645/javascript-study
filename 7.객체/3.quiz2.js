@@ -5,7 +5,7 @@ var user = {
     lee4567: 'lll4567',
     park9876: 'ppp9876',
     song5645: 'sss5645'
-}
+};
 
 while(true){
     var userId = prompt('아이디를 입력해주세요.');
