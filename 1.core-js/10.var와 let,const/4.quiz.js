@@ -9,24 +9,22 @@
    출력하는 로직을 추가하세요.
 */
 
-var randomNumber = Math.floor(Math.random() * 101) + 1;
+let randomNumber = Math.floor(Math.random() * 101) + 1;
 alert('[UP & DOWN 게임 - 1 ~ 100사이의 숫자 중 어떤 숫자가 들어있을까요???]');
-var count=0;
+let count = 0;
 
-while(true){
-    var userNumber = +prompt(`UP & DOWN 게임 입니다. 랜덤으로 숫자를 입력해주세요.`);
-    if (randomNumber===userNumber){
+while (true) {
+    let userNumber = +prompt(`UP & DOWN 게임 입니다. 랜덤으로 숫자를 입력해주세요.`);
+    if (randomNumber === userNumber) {
         alert('답이 맞습니다.');
         count++;
         break;
-    }
-    else if (randomNumber<userNumber){
+    } else if (randomNumber < userNumber) {
         alert('Down');
         count++;
-    }else {
+    } else {
         alert('UP');
         count++;
     }
 }
 alert(`${count}번 만에 맞췄습니다.`);
-

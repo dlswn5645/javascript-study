@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li id="apple">Apple</li>
+        <li id="banana">Banana</li>
+        <li id="grape">Grape</li>
+        <!-- <li id="apple">Pineapple</li> -->
+    </ul>
+    
+    <script>
+        // console.log(document.head);
+
+        // 관례적으로 노드의 변수이름 앞에 $를 붙인다.
+        const $apple = document.getElementById('apple'); // id를 통해서 요소를 가져온다.
+        console.log($apple);
+
+        $apple.style.fontSize = '40px';
+        document.body.style.background = 'tomato';
+
+        // 없는 아이디를 사용하면 null을 반환
+        const $elem = document.getElementById('peach');
+        console.log($elem);
+
+        // 요소의 id부여시 id이름으로 자동으로 전역변수가 생성됨
+        // const banana = document.getElementById('banana'); 이 코드 생략
+        banana.style.color = 'yellow';
+
+        // 그런데 동일 이름으로 사용자가 변수 선언 시 자동 전역변수는 취소됨
+        const grape = "포도포도"; // 이렇게 임의적으로 선언하면 자동 전역변수가 취소
+        grape.style.color = 'violet';
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul > li {
+            font-size: 30px;
+        }
+        .red{
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul id="fruits">
+        <li class="red">Apple</li> 
+        <li class="red">Banana</li>
+        <li class="red">Grape</li>
+        <li class="red">Peach</li>
+    </ul>
+
+    <script>
+        // 유사 배열(실시간으로 갱신됨)
+        const $elements = document.getElementsByClassName('red');
+
+        /*
+        for(let i = 0; i < $elements.length; i++){
+            $elements[i].className = 'blue';
+        }
+        */
+
+        //유사 배열을 실제 배열로 변환하는 함수 Array.from()
+        const realArray = Array.from($elements);
+        // const realArray = [...$elements];
+
+        /*
+        for(let i = 0; i < $elements.length; i++){
+            $elements[i].className = 'blue';
+        }
+        */
+
+        for(let e of realArray){
+            e.className = 'blue';
+        }
+    </script>
+    
+</body>
+</html>
+<!-- 1회차: Apple이 변경됨 -->
+<!-- 2회차: Grape가 변경됨 (배열이 변경됨 -> 다시 Banana부터 0번이 됨) -->
+<!-- 3회차: 아무것도 이러나지 않음 -->
+
