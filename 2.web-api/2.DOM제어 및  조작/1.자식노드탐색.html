@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li class="apple">Apple</li>
+        <li class="banana">Banana</li>
+        <li class="grape">Grape</li>
+    </ul>
+
+    <ul id="test">
+
+    </ul>
+
+    <script>
+        // 노드탐색의 기점이 되는 요소 취득
+        const $fruits = document.getElementById('fruits');
+
+        // 기준 노드의 모든 자식 노드를 탐색,텍스트노드를 포함해서 가져옴(공백도 모두 포함)
+        const childNods = $fruits.childNodes;//쓰지 말기 
+        console.log(childNods);
+
+        // 기준 노드의 모든 자식 노드를 탐색,텍스트노드를 포함하지 않음.
+        const children = $fruits.children;
+        console.log(children);
+        
+        // 기준 노드의 첫번째 자식 노드를 탐색 
+        console.log($fruits.firstChild);// 텍스트가 나올 수 있음 
+        console.log($fruits.firstElementChild);
+
+        // 기준 노드의 마지막 자식 노드를 탐색 
+        console.log($fruits.lastChild);// 텍스트가 나올 수 있음 
+        console.log($fruits.lastElementChild);
+
+        // 기준 노드의 자식 노드 존재 여부 확인, 텍스트노드가 있을시 true가 나옴에 주의(공백도 모두 포함) 
+        const $test = document.getElementById('test');
+        console.log($test.hasChildNodes());
+
+        // 텍스트 노드를 제외한 요소 노드의 여부를 확일할 떄는 children.length를 논리로 바꾸어 사용
+        console.log(!!$test.children.length);//children.length가 0이기 때문에 명시적 논리 변환으로 false 출력 
+    </script>
+    
+</body>
+</html>
