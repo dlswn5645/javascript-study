@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">클릭!</button>
+
+    <script>
+        const $btn = document.querySelector('#btn');
+
+        // 핸들러 함수 정의 첫번째(이름있는 기명함수)
+        function greeting() {
+            alert('Hello');
+        };
+
+        // 핸들러 함수 정의 두번째(이름있는 기명함수)
+        const world = function(){
+            alert('World!');
+        };
+
+        $btn.addEventListener('click',greeting);
+
+        $btn.addEventListener('click',world);
+
+        // 익명함수
+        $btn.addEventListener('click',function(){
+            alert('안녕');
+        });
+
+        // 이벤트 핸들러 제거 (기명함수만 제거 가능)
+        $btn.removeEventListener('click',greeting);
+
+    </script>
+    
+</body>
+</html>
