@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fruits{
+            padding: 50px;
+            border: 2px solid red;
+        }
+        #fruits>li {
+            background: yellow;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="fruits">
+        <li id="apple">Apple</li>
+        <li id="banana">Banana</li>
+        <li id="grape">Grape</li>
+    </ul>
+
+    <script>
+        const $fruits = document.getElementById('fruits');
+
+        $fruits.addEventListener('click', function(e){
+            console.log('ul태그에서 이벤트가 발생함.');
+            // console.log('이벤트 실제 발생 타겟:',e.target);
+            // console.log('이벤트 핸들러가 붙은 타겟:',e.currentTarget);
+            // console.log('이벤트 전파 단계:',e.eventPhase);
+        },true);
+
+        const $apple = $fruits.firstElementChild;
+
+        $apple.addEventListener('click', function(e){
+            console.log('apple에서 이벤트가 발생함.');
+            // console.log('이벤트 실제 발생 타겟:',e.target);
+            // console.log('이벤트 핸들러가 붙은 타겟:',e.currentTarget);
+            // console.log('이벤트 전파 단계:',e.eventPhase);
+
+            // 이벤트 전파를 막음 
+            e.stopPropagation();
+        });
+
+    </script>
+    <!-- 이벤트는 전파되기 때문에 주의 해야함 -->
+    <!-- 
+        버블링: 어떤 특정 요소에 이벤트가 발생하면 일단은 그 요소에서 
+        이벤트가 일어남 -> 자동으로 부모에 걸린 이벤트가 작동함 -> 최상단 
+        의 조상요소 이벤트까지 반복함 
+
+        캡쳐링: 어떤 요소에서 이벤트가 발생하면 버블링과 반대로 아래로 배려온
+        다는 내용 -> 실제로는 발생하지 않음 -> addEventListener의 3번째값으로 true
+        를 전달하면 캡쳐링을 발생시킴.
+     -->
+
+    
+    
+</body>
+</html>
