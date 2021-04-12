@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       const xhr = new XMLHttpRequest();
+       xhr.open('PATCH','http://localhost:5000/posts/4');
+
+       //PUT요청의 경우에도 서버로 전송할 데이터가 필요함 
+       //수정시 시용하는 PATCH요청은 부분데이터 변경이 가능함 
+       const modData = {
+           author: '수정자'
+       };
+
+       //텍스트: text/plain
+       xhr.setRequestHeader('content-type','application/json');
+
+       //서버에 전송
+       xhr.send(JSON.stringify(modData));
+
+       xhr.onload = () => {
+           if(xhr.status === 200){
+               alert('modify success');
+           }
+       }
+
+   </script>
+</body>
+</html>
