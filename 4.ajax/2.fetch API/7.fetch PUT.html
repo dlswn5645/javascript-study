@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //fetch로 PUT요청 
+        //PUT요청은 GET요청과 달리 서버로 전달헤야힐 데이터들이 있다.
+        const reqInfo = {
+            method: 'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify({
+                id:10,
+                title:'fetch로 수정하기',
+                author:'mod fetch'
+            })
+        };
+        fetch('http://localhost:5000/posts/10',reqInfo)
+            .then(res => {
+                if(res.status === '200'){
+                    console.log('mod success');
+                }else{
+                    console.log('mod fail');
+                }
+            });
+    </script>
+    
+</body>
+</html>
